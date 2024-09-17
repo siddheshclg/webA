@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodOrderNow - About</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Food</span>OrderNow</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li class="current"><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>About FoodOrderNow</h1>
+        <p>FoodOrderNow is your go-to platform for delicious meals delivered right to your doorstep. We partner with local restaurants to bring you a wide variety of cuisines and flavors.</p>
+        <p>Our mission is to make food ordering simple, fast, and enjoyable for everyone. Whether you're craving pizza, pasta, or a fresh salad, we've got you covered!</p>
+        
+        <h2>Our Team</h2>
+        <div id="team-members"></div>
+    </div>
+
+
+    <script>
+
+        fetch('team.xml')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(data, "application/xml");
+                const members = xml.getElementsByTagName("member");
+                const teamContainer = document.getElementById("team-members");
+
+                for (let member of members) {
+                    const name = member.getElementsByTagName("name")[0].textContent;
+                    const role = member.getElementsByTagName("role")[0].textContent;
+                    
+                    const memberDiv = document.createElement("div");
+                    memberDiv.innerHTML = `<h3>${name}</h3><p>${role}</p>`;
+                    teamContainer.appendChild(memberDiv);
+                }
+            })
+            .catch(console.error);
+    </script>
+    <footer>
+        <p>&copy; 2024 FoodOrderNow. All rights reserved.</p>
+    </footer>
+</body>
+</html>

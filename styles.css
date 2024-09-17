@@ -1,0 +1,129 @@
+
+body {
+    display : flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+html, body {
+    margin : 0;
+    height : 100%;
+}
+.container {
+    width: 80%;
+    flex : 1;
+    margin: auto;
+    overflow: auto;
+    padding: 20px;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight, header .current a {
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #cccccc;
+    font-weight: bold;
+}
+
+
+.form-container {
+    flex : 1;
+    overflow-y: auto;
+    background: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #e8491d;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #333333;
+}
+
+
+.menu-item {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.menu-item h3 {
+    margin-top: 0;
+    color: #e8491d;
+}
+
+
+footer {
+    padding: 5px;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #35424a;
+    text-align: center;
+    flex-shrink: 0;
+}
